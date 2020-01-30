@@ -1,0 +1,74 @@
+@import '~@schibstedspain/sui-theme/lib/index';
+
+.Calendar {
+  background: #fff;
+  width: 400px;
+  padding: 8px;
+}
+
+
+.Calendar-topBar {
+  display: flex;
+  width: 100%;
+}
+
+.Calendar-month {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 4px 8px;
+  flex: 1 auto;
+  text-align: center;
+}
+
+.Calendar-arrow {
+  color: #0000ff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px;
+
+  &--left {
+
+  }
+  &--right {
+
+  }
+}
+
+.Calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.Calendar-dayWeeks {
+  text-align: center;
+
+  &:first-of-type,
+  &:last-of-type {
+    font-weight: 700;
+  }
+}
+
+
+.Calendar-day {
+  padding: 5px 0;
+  text-align: center;
+  cursor: pointer;
+
+  &--prev,
+  &--next {
+    color: #a6a6a6;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background: #57a9ff;
+  }
+
+  &.is-selected {
+    color: #ffffff;
+    background: #0000ff;
+  }
+}
+

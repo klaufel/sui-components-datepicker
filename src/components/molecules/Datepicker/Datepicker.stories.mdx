@@ -1,0 +1,20 @@
+import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import Datepicker from '.'
+
+<Meta title="Molecules/Datepicker" component={Datepicker} />
+
+# Datepicker
+
+Let's define a story for our `Datepicker` component:
+
+<Preview>
+  <Story name="default">
+    <div style={{minHeight: '340px'}}>
+      <Datepicker label="Label" name="formfield" />
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Datepicker} />

@@ -1,0 +1,20 @@
+import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import Popover from '.'
+
+<Meta title="Atoms/Popover" component={Popover} />
+
+# Popover
+
+Let's define a story for our `Popover` component:
+
+<Preview>
+  <Story name="default">
+    <Popover isActive>
+      <div>...children</div>
+    </Popover>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Popover} />

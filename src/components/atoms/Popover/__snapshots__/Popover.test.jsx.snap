@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover renders the component 1`] = `
+<div
+  class="Popover undefined"
+>
+  <div>
+    ...children
+  </div>
+</div>
+`;
