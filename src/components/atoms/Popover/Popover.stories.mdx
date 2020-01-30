@@ -1,5 +1,6 @@
 import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
 import Popover from '.'
+import Calendar from '../../molecules/Calendar'
 
 <Meta title="Atoms/Popover" component={Popover} />
 
@@ -18,3 +19,11 @@ Let's define a story for our `Popover` component:
 ## Props
 
 <Props of={Popover} />
+
+## Popover with Calendar
+
+<Story name="with calendar">
+  <Popover isActive>
+    <Calendar />
+  </Popover>
+</Story>

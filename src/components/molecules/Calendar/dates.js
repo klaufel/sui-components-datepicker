@@ -13,11 +13,17 @@ export const MONTHS_NAMES = [
   'December'
 ]
 
-export const WEEKDAYS_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+export const WEEKDAYS_NAMES = [
+  {name: 'Sun', weekend: true},
+  {name: 'Mon'},
+  {name: 'Tue'},
+  {name: 'Wed'},
+  {name: 'Thu'},
+  {name: 'Fri'},
+  {name: 'Sat', weekend: true}
+]
 
-export const CALENDAR_ROWS = 6
-
-export const CALENDAR_GRID = CALENDAR_ROWS * WEEKDAYS_NAMES.length
+export const WEEKDAYS_NUMBERS = WEEKDAYS_NAMES.length
 
 export const getDateFormat = (year, month, day) => {
   return new Date(year, month - 1, day).toLocaleDateString(undefined, {
@@ -25,6 +31,11 @@ export const getDateFormat = (year, month, day) => {
     month: '2-digit',
     day: '2-digit'
   })
+}
+
+export const getDateTransform = date => {
+  const dateTransform = date.split('/')
+  return `${dateTransform[2]}-${dateTransform[1]}/${dateTransform[0]}`
 }
 
 export const getMonthName = month => {
@@ -48,7 +59,7 @@ export const getMonthDays = (year, month) => {
 }
 
 export const getMonthDayWeek = (year, month, day) => {
-  return new Date(`${year}-${month}-${day}`).getDay() + 1
+  return new Date(year, month - 1, day).getDay() + 1
 }
 
 export const getCalendarDays = (year, month) => {
@@ -57,8 +68,10 @@ export const getCalendarDays = (year, month) => {
   const prevMonth = getPrevMonth(year, month - 1)
   const nextMonth = getNextMonth(year, month + 1)
   const daysFromPrevMonth = monthFirstDay - 1
-  const daysFromNextMonth =
-    CALENDAR_GRID - (daysFromPrevMonth + actualMonthDays)
+  const calendarGrid =
+    Math.ceil((daysFromPrevMonth + actualMonthDays) / WEEKDAYS_NUMBERS) *
+    WEEKDAYS_NUMBERS
+  const daysFromNextMonth = calendarGrid - (daysFromPrevMonth + actualMonthDays)
 
   const actualMonthDates = [...new Array(actualMonthDays)].map((val, day) => {
     const dayMonth = day + 1

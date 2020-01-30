@@ -1,7 +1,10 @@
+$Icon-size: 24px !default;
+$Icon-fill: #31417d !default;
+
 .Icon {
-  width: 24px;
-  height: 24px;
+  width: $Icon-size;
+  height: $Icon-size;
   display: inline-flex;
   align-self: center;
-  fill: blue;
+  fill: $Icon-fill;
 }

@@ -19,25 +19,13 @@ Let's define a story for our `Calendar` component:
 
 <Props of={Calendar} />
 
-### Default date
+### With a default date
 
 <Preview>
-  <Story name="default date">
-    <Calendar defaultDate="12/11/1991" />
+  <Story name="with a default date">
+    <Calendar date="01/10/1994" />
   </Story>
-  <Story name="default date">
-    <Calendar defaultDate="12/11/1991" />
-  </Story>
-</Preview>
-
-### When date is updated
-
-<Preview>
-  <Story name="when date is updated">
-    <Calendar onDateChange={actions('onClick', 'onMouseOver')} />
+  <Story name="with a default date">
+    <Calendar date="01/10/1994" />
   </Story>
 </Preview>
-
-We can even preview multiple stories in a block. This
-gets rendered as a group, but defines individual stories
-with unique URLs and isolated snapshot tests.

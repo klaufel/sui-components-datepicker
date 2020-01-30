@@ -1,15 +1,22 @@
 @import '~@schibstedspain/sui-theme/lib/index';
 
+$Calendar-day-width: 44px !default;
+$Calendar-day-onHover-backgroundColor: #dedede !default;
+$Calendar-day-isSelected-backgroundColor: #31417d !default;
+$Calendar-day-isSelected-color: #ffffff !default;
+
+$Calendar-width: $Calendar-day-width * 7 !default;
+
 .Calendar {
   background: #fff;
-  width: 400px;
-  padding: 8px;
+  max-width: $Calendar-width;
+  margin: 0 auto;
 }
-
 
 .Calendar-topBar {
   display: flex;
   width: 100%;
+  padding-bottom: 12px;
 }
 
 .Calendar-month {
@@ -25,36 +32,42 @@
   color: #0000ff;
   font-weight: 700;
   cursor: pointer;
-  padding: 8px;
-
-  &--left {
-
-  }
-  &--right {
-
-  }
+  padding: 2px 4px;
 }
 
 .Calendar-days {
+  font-size: 14px;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  position: relative;
+  grid-template-columns: repeat(7, $Calendar-day-width);
+  grid-template-rows: 1fr repeat(6, $Calendar-day-width);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .Calendar-dayWeeks {
+  display: block;
+  padding: 8px 0;
+  font-size: 12px;
   text-align: center;
 
-  &:first-of-type,
-  &:last-of-type {
+  &--weekend {
     font-weight: 700;
   }
 }
 
 
 .Calendar-day {
-  padding: 5px 0;
   text-align: center;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
 
   &--prev,
   &--next {
@@ -62,13 +75,11 @@
   }
 
   &:hover {
-    color: #ffffff;
-    background: #57a9ff;
+    background: $Calendar-day-onHover-backgroundColor;
   }
 
   &.is-selected {
-    color: #ffffff;
-    background: #0000ff;
+    color: $Calendar-day-isSelected-color;
+    background: $Calendar-day-isSelected-backgroundColor;
   }
 }
-

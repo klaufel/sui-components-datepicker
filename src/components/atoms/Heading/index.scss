@@ -1,0 +1,16 @@
+.Heading {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  margin: 0 0 20px;
+
+  &--small {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  &--huge {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}

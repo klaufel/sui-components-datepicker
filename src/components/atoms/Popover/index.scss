@@ -3,12 +3,13 @@
   top: 100%;
   background: #fff;
   z-index: 10;
-  padding: 12px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+  padding: 22px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
   opacity: 0;
   visibility: hidden;
-  transition: opacity .2s, visibility .2s;
-  transition-delay: .25s;
+  border-radius: 10px;
+  transition: opacity 0.2s, visibility 0.2s;
+  transition-delay: 0.25s;
 
   &.is-active {
     opacity: 1;

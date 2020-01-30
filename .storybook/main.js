@@ -4,8 +4,7 @@ module.exports = {
   stories: ['../src/**/*.stories.(js|jsx||mdx)'],
   addons: [
     '@storybook/addon-docs',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-a11y'
+    '@storybook/addon-knobs/register'
   ],
   webpackFinal: async config => {
     config.module.rules.push({
