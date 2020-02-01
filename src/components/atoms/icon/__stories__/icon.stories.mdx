@@ -1,16 +1,17 @@
 import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
 import {select} from '@storybook/addon-knobs'
-import Icon, {ICON_NAMES} from '.'
+import Icon, {ICON_NAMES, ICON_SIZES} from '..'
 
 export const knobsProps = () => ({
-  name: select('name', ICON_NAMES, ICON_NAMES[0])
+  name: select('name', ICON_NAMES, ICON_NAMES[0]),
+  size: select('size', Object.keys(ICON_SIZES))
 })
 
 <Meta title="Atoms/Icon" component={Icon} />
 
 # Icon
 
-Let's define a story for our `Icon` component:
+Wraps a `svg` path with that follows the rules on the UX Definition and give you `Icon` sizes.
 
 <Preview>
   <Story name="Default">
@@ -22,40 +23,91 @@ Let's define a story for our `Icon` component:
 
 <Props of={Icon} />
 
-## All icons
+## Stories
+
+### Sizes
 
 <Preview>
-  <Story name="Icon: chevronUp">
+  <Story name="Size: sm">
     <div>
-      <Icon name="chevronUp" />
+      <small>
+        Size: <strong>sm</strong> (20x20)
+      </small>
       <br />
-      <small>chevronUp</small>
+      <br />
+      <Icon name="chevronUp" size="sm" />
     </div>
   </Story>
-  <Story name="Icon: chevronRight">
+  <Story name="Size: md">
     <div>
-      <Icon name="chevronRight" />
+      <small>
+        Size: <strong>md</strong> (24x24)
+      </small>
       <br />
-      <small>chevronRight</small>
+      <br />
+      <Icon name="chevronUp" size="md" />
     </div>
   </Story>
-  <Story name="Icon: chevronDown">
+  <Story name="Size: lg">
     <div>
-      <Icon name="chevronDown" />
+      <small>
+        Size: <strong>lg</strong> (32x32)
+      </small>
       <br />
-      <small>chevronDown</small>
+      <br />
+      <Icon name="chevronUp" size="lg" />
     </div>
   </Story>
-  <Story name="Icon: chevronLeft">
+  <Story name="Size: xl">
     <div>
-      <Icon name="chevronLeft" />
+      <small>
+        Size: <strong>xl</strong> (40x40)
+      </small>
       <br />
-      <small>chevronLeft</small>
+      <br />
+      <Icon name="chevronUp" size="xl" />
     </div>
   </Story>
 </Preview>
 
-## Knobs
+### All icons
+
+<Preview>
+  <Story name="Icon: chevronUp">
+    <div>
+      <small>chevronUp</small>
+      <br />
+      <br />
+      <Icon name="chevronUp" />
+    </div>
+  </Story>
+  <Story name="Icon: chevronRight">
+    <div>
+      <small>chevronRight</small>
+      <br />
+      <br />
+      <Icon name="chevronRight" />
+    </div>
+  </Story>
+  <Story name="Icon: chevronDown">
+    <div>
+      <small>chevronDown</small>
+      <br />
+      <br />
+      <Icon name="chevronDown" />
+    </div>
+  </Story>
+  <Story name="Icon: chevronLeft">
+    <div>
+      <small>chevronLeft</small>
+      <br />
+      <br />
+      <Icon name="chevronLeft" />
+    </div>
+  </Story>
+</Preview>
+
+### Knobs
 
 <Preview>
   <Story name="Knobs">
