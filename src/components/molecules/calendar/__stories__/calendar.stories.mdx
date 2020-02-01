@@ -1,0 +1,31 @@
+import {Meta, Props, Block, Story, Preview} from '@storybook/addon-docs/blocks'
+import {text} from '@storybook/addon-knobs'
+import {actions} from '@storybook/addon-actions'
+import Calendar from '.'
+
+<Meta title="Molecules/Calendar" component={Calendar} />
+
+# Calendar
+
+Let's define a story for our `Calendar` component:
+
+<Preview>
+  <Story name="default">
+    <Calendar />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Calendar} />
+
+### Default dates
+
+<Preview>
+  <Story name="Default date">
+    <Calendar date="01/10/1994" />
+  </Story>
+  <Story name="Default month and year">
+    <Calendar month="12" year="2020" />
+  </Story>
+</Preview>
