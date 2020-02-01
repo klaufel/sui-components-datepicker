@@ -1,16 +1,16 @@
 import React from 'react'
 import {render} from '@testing-library/react'
-import Heading, {HEADINGS_TYPES, HEADINGS_SIZES} from '.'
+import Heading, {HEADINGS_TYPES, HEADINGS_SIZES} from '..'
 
 const HeadingTypes = () =>
-  HEADINGS_TYPES.map(type => (
+  Object.keys(HEADINGS_TYPES).map(type => (
     <Heading key={type} type={type}>
       Lorem ipsum dolor sit amet
     </Heading>
   ))
 
 const HeadingSizes = () =>
-  HEADINGS_SIZES.map(size => (
+  Object.keys(HEADINGS_SIZES).map(size => (
     <Heading key={size} size={size}>
       Lorem ipsum dolor sit amet
     </Heading>
