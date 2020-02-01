@@ -1,11 +1,8 @@
 const path = require('path')
 
 module.exports = {
-  stories: ['../src/**/*.stories.(js|jsx||mdx)'],
-  addons: [
-    '@storybook/addon-docs',
-    '@storybook/addon-knobs/register'
-  ],
+  stories: ['../src/**/*.stories.(js|mdx)'],
+  addons: ['@storybook/addon-docs', '@storybook/addon-knobs/register'],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.scss$/,
