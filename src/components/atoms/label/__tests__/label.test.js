@@ -1,9 +1,9 @@
 import React from 'react'
 import {render} from '@testing-library/react'
-import Label from '.'
+import Label from '..'
 
 describe('Label', () => {
-  it('renders the component', () => {
+  test('it works default', () => {
     const {container} = render(
       <Label text="Default label" name="default-label" />
     )
