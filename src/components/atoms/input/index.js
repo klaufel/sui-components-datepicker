@@ -9,6 +9,7 @@ const Input = ({
   value,
   disabled,
   readonly,
+  onClick,
   ...props
 }) => {
   return (
@@ -19,6 +20,7 @@ const Input = ({
       defaultValue={value}
       disabled={disabled}
       readOnly={readonly}
+      onClick={onClick}
       className="Input"
       {...props}
     />
@@ -26,18 +28,20 @@ const Input = ({
 }
 
 Input.propTypes = {
-  /* The DOM id global attribute */
+  /** The DOM id global attribute */
   id: PropTypes.string,
-  /* Sets the name property of an element in the DOM */
+  /** Sets the name property of an element in the DOM */
   name: PropTypes.string,
-  /* A hint to the user of what can be entered in the control. The placeholder text must not contain carriage returns or line-feeds */
+  /** A hint to the user of what can be entered in the control. The placeholder text must not contain carriage returns or line-feeds */
   placeholder: PropTypes.string,
-  /* Default value of the input */
+  /** Default value of input */
   value: PropTypes.string,
-  /* This Boolean attribute prevents the user from interacting with the input */
+  /** This Boolean attribute prevents the user from interacting with the input */
   disabled: PropTypes.bool,
-  /* This Boolean attribute prevents the user modify the value of input */
-  readonly: PropTypes.bool
+  /** This Boolean attribute prevents the user modify the value of input */
+  readonly: PropTypes.bool,
+  /** Click event */
+  onClick: PropTypes.func
 }
 
 export default Input
