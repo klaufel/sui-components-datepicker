@@ -1,24 +1,36 @@
+@import '../../../styles/lib/index';
+
+$Button-color: $c-white !default;
+$Button-backgroundColor: $c-primary !default;
+$Button-backgroundColor--hover: darken($Button-backgroundColor, 10%) !default;
+$Button-backgroundColor--active: darken($Button-backgroundColor, 5%) !default;
+$Button-borderRadius: $bdrs-none !default;
+$Button-PaddingY: $p-v !default;
+$Button-PaddingX: $p-h !default;
+
 .Button {
-  background: none;
+  align-items: center;
+  border: 0;
+  border-radius: $Button-borderRadius;
   cursor: pointer;
-  user-select: none;
-  border: 1px solid;
-  border-radius: 2px;
-  box-sizing: border-box;
-  display: inline-block;
-  font-family: 'Open Sans',Helvetica,sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 40px;
-  line-height: normal;
-  min-width: 40px;
-  outline: 0;
-  padding: 0 16px;
-  text-transform: none;
-  white-space: nowrap;
-}
+  display: flex;
+  font-family: inherit;
+  line-height: $lh-button;
+  outline: none;
+  padding: $Button-PaddingY $Button-PaddingX;
+  background-color: $Button-backgroundColor;
+  color: $Button-color;
 
+  &:hover {
+    background-color: $Button-backgroundColor--hover;
+  }
 
-.Button-default {
+  &:active {
+    background-color: $Button-backgroundColor--active;
+  }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }
