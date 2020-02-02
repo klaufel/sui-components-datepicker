@@ -1,12 +1,13 @@
-@import '~@schibstedspain/sui-theme/lib/settings';
+@import '../../../styles/lib/index';
 
-$c-label: inherit !default;
-$fw-label: inherit !default;
+$Label-fontSize: $fz-m !default;
+$Label-fontWeight: $fw-semi-bold !default;
+$Label-color: $c-black !default;
 
 .Label {
   display: block;
-  color: $c-label;
-  font-size: $fz-base;
-  font-weight: $fw-label;
-  padding: 4px 0;
+  font-size: $Label-fontSize;
+  font-weight: $Label-fontWeight;
+  color: $Label-color;
+  padding: $p-s 0;
 }
