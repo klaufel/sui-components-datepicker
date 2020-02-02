@@ -1,43 +1,41 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Icon from '../../atoms/icon'
 import Heading from '../../atoms/heading'
 import {
+  getCalendarDate,
   getCalendarDays,
+  getDateFormat,
   getMonthName,
   getNextMonth,
   getPrevMonth,
-  getDateFormat,
-  WEEKDAYS_NAMES,
-  getDateTransform
+  WEEKDAYS_NAMES
 } from './dates'
 
 const Calendar = ({date, month, year, onDateChange}) => {
-  const actualDate = date ? getDateTransform(date) : new Date()
-  const [dateSelected, setDateSelected] = useState({
-    year: actualDate.getFullYear() || Number(year),
-    month: actualDate.getMonth() + 1 || Number(month)
+  const dateCurrent = getCalendarDate(date)
+  const [dateCalendar, setDateCalendar] = useState({
+    year: year || dateCurrent.year,
+    month: month || dateCurrent.month
   })
-  const daysInMonth = getCalendarDays(dateSelected.year, dateSelected.month)
-  const [dateFull, setDateFull] = useState(
-    getDateFormat(
-      dateSelected.year,
-      dateSelected.month,
-      date && actualDate.getDate()
-    )
+  const [dateSelected, setDateSelected] = useState(
+    date
+      ? getDateFormat(dateCurrent.year, dateCurrent.month, dateCurrent.day)
+      : null
   )
+  const calendarDays = getCalendarDays(dateCalendar.year, dateCalendar.month)
 
   const handleNextMonth = () => {
-    setDateSelected(getNextMonth(dateSelected.year, dateSelected.month + 1))
+    setDateCalendar(getNextMonth(dateCalendar.year, dateCalendar.month))
   }
 
   const handlePrevMonth = () => {
-    setDateSelected(getPrevMonth(dateSelected.year, dateSelected.month - 1))
+    setDateCalendar(getPrevMonth(dateCalendar.year, dateCalendar.month))
   }
 
   const handleClickDay = date => {
-    setDateFull(date)
+    setDateSelected(date)
     onDateChange && onDateChange(date)
   }
 
@@ -51,8 +49,8 @@ const Calendar = ({date, month, year, onDateChange}) => {
           <Icon name="chevronLeft" />
         </span>
         <span className="Calendar-month">
-          <Heading type="span" size="small">
-            {getMonthName(dateSelected.month)} {dateSelected.year}
+          <Heading type="span" size="sm">
+            {getMonthName(dateCalendar.month)} {dateCalendar.year}
           </Heading>
         </span>
         <span
@@ -64,20 +62,21 @@ const Calendar = ({date, month, year, onDateChange}) => {
       </div>
       <div className="Calendar-days">
         {WEEKDAYS_NAMES.map(day => {
+          const {name, weekend} = day
           let classname = 'Calendar-dayWeeks'
-          if (day.weekend) {
+          if (weekend) {
             classname += ' Calendar-dayWeeks--weekend'
           }
           return (
-            <div key={day.name} className={classname}>
-              {day.name}
+            <div key={name} className={classname}>
+              {name}
             </div>
           )
         })}
-        {daysInMonth.map(dates => {
+        {calendarDays.map(dates => {
           const {day, date, month} = dates
           let classname = `Calendar-day Calendar-day--${month}`
-          if (date === dateFull) {
+          if (date === dateSelected) {
             classname += ' is-selected'
           }
           return (
@@ -102,7 +101,7 @@ Calendar.propTypes = {
   month: PropTypes.number,
   /** Default year to display in calendar  */
   year: PropTypes.number,
-  /** Callback to return a selected date */
+  /** Callback to return a selected date. Return a date format: dd/mm/yyyy */
   onDateChange: PropTypes.func
 }
 

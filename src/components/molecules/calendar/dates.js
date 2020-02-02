@@ -25,17 +25,38 @@ export const WEEKDAYS_NAMES = [
 
 export const WEEKDAYS_NUMBERS = WEEKDAYS_NAMES.length
 
-export const getDateFormat = (year, month, day) => {
-  return new Date(year, month - 1, day).toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  })
+export const getZeroPad = number => {
+  return number <= 9 ? `0${number}` : String(number)
 }
 
-export const getDateTransform = date => {
+export const getDateFormat = (year, month, day) => {
+  return `${getZeroPad(day)}/${getZeroPad(month)}/${year}`
+}
+
+export const getDateSplit = date => {
   const dateTransform = date.split('/')
-  return `${dateTransform[2]}-${dateTransform[1]}/${dateTransform[0]}`
+  return {
+    year: Number(dateTransform[2]),
+    month: Number(dateTransform[1]),
+    day: Number(dateTransform[0])
+  }
+}
+
+export const getCalendarDate = date => {
+  if (date) {
+    const splitDate = getDateSplit(date)
+    return {
+      year: splitDate.year,
+      month: splitDate.month,
+      day: splitDate.day
+    }
+  }
+  const newDate = new Date()
+  return {
+    year: newDate.getFullYear(),
+    month: newDate.getMonth() + 1,
+    day: null
+  }
 }
 
 export const getMonthName = month => {
@@ -43,14 +64,14 @@ export const getMonthName = month => {
 }
 
 export const getNextMonth = (year, month) => {
-  const nextMonth = month >= 13 ? 1 : month
-  const nextYear = month >= 13 ? year + 1 : year
+  const nextMonth = month >= 12 ? 1 : month + 1
+  const nextYear = month >= 12 ? year + 1 : year
   return {year: nextYear, month: nextMonth}
 }
 
 export const getPrevMonth = (year, month) => {
-  const prevMonth = month <= 0 ? 12 : month
-  const prevYear = month <= 0 ? year - 1 : year
+  const prevMonth = month <= 1 ? 12 : month - 1
+  const prevYear = month <= 1 ? year - 1 : year
   return {year: prevYear, month: prevMonth}
 }
 
@@ -62,44 +83,60 @@ export const getMonthDayWeek = (year, month, day) => {
   return new Date(year, month - 1, day).getDay() + 1
 }
 
+export const getCalendarGrid = (prevMonth, currentMonth) => {
+  return (
+    Math.ceil((prevMonth + currentMonth) / WEEKDAYS_NUMBERS) * WEEKDAYS_NUMBERS
+  )
+}
+
+export const getMonthDates = (
+  days,
+  year,
+  month,
+  monthType = 'current',
+  diff = 0
+) => {
+  return [...new Array(days)].map((val, day) => {
+    const currentDay = day + 1 + diff
+    return {
+      day: currentDay,
+      date: getDateFormat(year, month, currentDay),
+      month: monthType
+    }
+  })
+}
+
 export const getCalendarDays = (year, month) => {
-  const actualMonthDays = getMonthDays(year, month)
-  const monthFirstDay = getMonthDayWeek(year, month, 1)
-  const prevMonth = getPrevMonth(year, month - 1)
-  const nextMonth = getNextMonth(year, month + 1)
-  const daysFromPrevMonth = monthFirstDay - 1
-  const calendarGrid =
-    Math.ceil((daysFromPrevMonth + actualMonthDays) / WEEKDAYS_NUMBERS) *
-    WEEKDAYS_NUMBERS
-  const daysFromNextMonth = calendarGrid - (daysFromPrevMonth + actualMonthDays)
-
-  const actualMonthDates = [...new Array(actualMonthDays)].map((val, day) => {
-    const dayMonth = day + 1
-    return {
-      day: dayMonth,
-      date: getDateFormat(year, month, dayMonth),
-      month: 'actual'
-    }
-  })
-
+  const currentMonthDays = getMonthDays(year, month)
+  const prevMonth = getPrevMonth(year, month)
+  const nextMonth = getNextMonth(year, month)
   const prevMonthDays = getMonthDays(prevMonth.year, prevMonth.month)
-  const prevMonthDates = [...new Array(daysFromPrevMonth)].map((val, day) => {
-    const dayMonth = day + 1 + (prevMonthDays - daysFromPrevMonth)
-    return {
-      day: dayMonth,
-      date: getDateFormat(prevMonth.year, prevMonth.month, dayMonth),
-      month: 'prev'
-    }
-  })
+  const daysFromPrevMonth = getMonthDayWeek(year, month, 1) - 1
+  const calendarGrid = getCalendarGrid(daysFromPrevMonth, currentMonthDays)
+  const daysFromNextMonth =
+    calendarGrid - (daysFromPrevMonth + currentMonthDays)
 
-  const nextMonthDates = [...new Array(daysFromNextMonth)].map((val, day) => {
-    const dayMonth = day + 1
-    return {
-      day: dayMonth,
-      date: getDateFormat(nextMonth.year, nextMonth.month, dayMonth),
-      month: 'next'
-    }
-  })
+  const currentMonthDates = getMonthDates(
+    currentMonthDays,
+    year,
+    month,
+    'current'
+  )
 
-  return [...prevMonthDates, ...actualMonthDates, ...nextMonthDates]
+  const prevMonthDates = getMonthDates(
+    daysFromPrevMonth,
+    prevMonth.year,
+    prevMonth.month,
+    'prev',
+    prevMonthDays - daysFromPrevMonth
+  )
+
+  const nextMonthDates = getMonthDates(
+    daysFromNextMonth,
+    nextMonth.year,
+    nextMonth.month,
+    'next'
+  )
+
+  return [...prevMonthDates, ...currentMonthDates, ...nextMonthDates]
 }
