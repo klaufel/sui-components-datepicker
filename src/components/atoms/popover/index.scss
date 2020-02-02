@@ -1,15 +1,31 @@
+@import '../../../styles/lib/index';
+
+$Popover-background: $c-white !default;
+$Popover-boxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.35) !default;
+$Popover-borderRadius: $bdrs-base !default;
+$Popover-borderColor: $c-gray !default;
+$Popover-border: false !default;
+
 .Popover {
   position: absolute;
   top: 100%;
-  background: #fff;
-  z-index: 10;
-  padding: 22px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  background: $Popover-background;
+  z-index: $z-tooltips;
+  padding: $p-l;
+  box-shadow: $Popover-boxShadow;
   opacity: 0;
   visibility: hidden;
-  border-radius: 10px;
+  border-radius: $Popover-borderRadius;
   transition: opacity 0.2s, visibility 0.2s;
   transition-delay: 0.25s;
+
+  @if $Popover-border == true {
+    border: 1px solid $Popover-borderColor;
+  }
+
+  @media (min-width: 768px) {
+    padding: $p-xl;
+  }
 
   &.is-active {
     opacity: 1;

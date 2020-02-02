@@ -5,10 +5,10 @@ exports[`Calendar it works with a default date 1`] = `
   class="Calendar"
 >
   <div
-    class="Calendar-topBar"
+    class="Calendar-header"
   >
     <span
-      class="Calendar-arrow Calendar-arrow--left"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -33,7 +33,7 @@ exports[`Calendar it works with a default date 1`] = `
       </span>
     </span>
     <span
-      class="Calendar-arrow Calendar-arrow--right"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -48,40 +48,40 @@ exports[`Calendar it works with a default date 1`] = `
     </span>
   </div>
   <div
-    class="Calendar-days"
+    class="Calendar-grid"
   >
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sun
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Mon
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Tue
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Wed
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Thu
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Fri
     </div>
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sat
     </div>
@@ -304,10 +304,10 @@ exports[`Calendar it works with a default date and year/month selected 1`] = `
   class="Calendar"
 >
   <div
-    class="Calendar-topBar"
+    class="Calendar-header"
   >
     <span
-      class="Calendar-arrow Calendar-arrow--left"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -332,7 +332,7 @@ exports[`Calendar it works with a default date and year/month selected 1`] = `
       </span>
     </span>
     <span
-      class="Calendar-arrow Calendar-arrow--right"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -347,40 +347,40 @@ exports[`Calendar it works with a default date and year/month selected 1`] = `
     </span>
   </div>
   <div
-    class="Calendar-days"
+    class="Calendar-grid"
   >
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sun
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Mon
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Tue
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Wed
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Thu
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Fri
     </div>
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sat
     </div>
@@ -568,10 +568,10 @@ exports[`Calendar it works with a year and month 1`] = `
   class="Calendar"
 >
   <div
-    class="Calendar-topBar"
+    class="Calendar-header"
   >
     <span
-      class="Calendar-arrow Calendar-arrow--left"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -596,7 +596,7 @@ exports[`Calendar it works with a year and month 1`] = `
       </span>
     </span>
     <span
-      class="Calendar-arrow Calendar-arrow--right"
+      class="Calendar-arrow"
     >
       <svg
         class="Icon Icon--md"
@@ -611,40 +611,40 @@ exports[`Calendar it works with a year and month 1`] = `
     </span>
   </div>
   <div
-    class="Calendar-days"
+    class="Calendar-grid"
   >
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sun
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Mon
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Tue
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Wed
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Thu
     </div>
     <div
-      class="Calendar-dayWeeks"
+      class="Calendar-week"
     >
       Fri
     </div>
     <div
-      class="Calendar-dayWeeks Calendar-dayWeeks--weekend"
+      class="Calendar-week Calendar-week--weekend"
     >
       Sat
     </div>

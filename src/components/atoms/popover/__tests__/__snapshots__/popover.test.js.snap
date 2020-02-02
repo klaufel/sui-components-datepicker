@@ -2,7 +2,7 @@
 
 exports[`Popover renders the component 1`] = `
 <div
-  class="Popover undefined"
+  class="Popover"
 >
   <div>
     ...children

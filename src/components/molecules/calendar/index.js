@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Icon from '../../atoms/icon'
@@ -41,11 +41,8 @@ const Calendar = ({date, month, year, onDateChange}) => {
 
   return (
     <div className="Calendar">
-      <div className="Calendar-topBar">
-        <span
-          className="Calendar-arrow Calendar-arrow--left"
-          onClick={handlePrevMonth}
-        >
+      <div className="Calendar-header">
+        <span className="Calendar-arrow" onClick={handlePrevMonth}>
           <Icon name="chevronLeft" />
         </span>
         <span className="Calendar-month">
@@ -53,19 +50,16 @@ const Calendar = ({date, month, year, onDateChange}) => {
             {getMonthName(dateCalendar.month)} {dateCalendar.year}
           </Heading>
         </span>
-        <span
-          className="Calendar-arrow Calendar-arrow--right"
-          onClick={handleNextMonth}
-        >
+        <span className="Calendar-arrow" onClick={handleNextMonth}>
           <Icon name="chevronRight" />
         </span>
       </div>
-      <div className="Calendar-days">
+      <div className="Calendar-grid">
         {WEEKDAYS_NAMES.map(day => {
           const {name, weekend} = day
-          let classname = 'Calendar-dayWeeks'
+          let classname = 'Calendar-week'
           if (weekend) {
-            classname += ' Calendar-dayWeeks--weekend'
+            classname += ' Calendar-week--weekend'
           }
           return (
             <div key={name} className={classname}>

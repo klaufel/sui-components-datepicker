@@ -1,56 +1,60 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Popover from '../../atoms/popover'
 import FormField from '../formfield'
 import Calendar from '../calendar'
 
-const Datepicker = ({label, name}) => {
-  const [showCalendar, setShowCalendar] = useState(false)
-  const [calendarDate, setCalendarDate] = useState(null)
-  const wrapperRef = useRef(null)
+const Datepicker = ({label, date, month, year, name}) => {
+  const [isActive, setIsActive] = useState(false)
+
+  const [calendarDate, setCalendarDate] = useState(date || null)
 
   const handleClick = () => {
-    setShowCalendar(!showCalendar)
+    setIsActive(!isActive)
   }
 
-  const handleClickOutside = event => {
-    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-      setShowCalendar(false)
-    }
+  const handleClose = () => {
+    setIsActive(false)
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside)
-    return () => {
-      document.removeEventListener('click', handleClickOutside)
-    }
-  }, [])
-
-  useEffect(() => {
-    setShowCalendar(false)
+    handleClose()
   }, [calendarDate])
 
   return (
-    <div className="Datepicker" ref={wrapperRef}>
+    <div className="Datepicker">
       <FormField
         label={label}
         name={name}
         type="text"
         readonly
-        onClick={handleClick}
         defaultValue={calendarDate}
+        onClick={handleClick}
       />
-      <Popover isActive={showCalendar}>
-        <Calendar onDateChange={setCalendarDate} />
+      <Popover isOpen={isActive} onClose={handleClose}>
+        <Calendar
+          onDateChange={setCalendarDate}
+          date={date}
+          month={month}
+          year={year}
+        />
       </Popover>
     </div>
   )
 }
 
 Datepicker.propTypes = {
+  /** The label itself */
   label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  /** Sets the name property of an element in the DOM */
+  name: PropTypes.string.isRequired,
+  /** Default date, format: dd/mm/yyyy  */
+  date: PropTypes.string,
+  /** Default month to display in calendar  */
+  month: PropTypes.number,
+  /** Default year to display in calendar  */
+  year: PropTypes.number
 }
 
 export default Datepicker
