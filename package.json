@@ -5,15 +5,16 @@
   "scripts": {
     "storybook": "start-storybook -p 9001",
     "storybook:build": "build-storybook -o storybook -c .storybook",
-    "eslint:check": "eslint \"./**/*.{js,jsx}\"",
-    "eslint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
-    "prettier:check": "prettier \"./**/*.{js,jsx,mdx}\" --check",
-    "prettier:write": "prettier \"./**/*.{js,jsx,mdx}\" --write",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:js": "sui-lint js",
+    "lint:sass": "sui-lint sass",
+    "prettier:check": "prettier \"./**/*.{js,mdx,scss}\" --check",
+    "prettier:write": "prettier \"./**/*.{js,mdx,scss}\" --write",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:update": "jest --updateSnapshot",
     "test:coverage": "jest --coverage",
-    "test:coverage-web": "jest --coverage && open coverage/lcov-report/index.html"
+    "test:coverage-web": "npm run test:coverage && open coverage/lcov-report/index.html"
   },
   "author": "Juan Carlos Ruiz <klaufel@gmail.com>",
   "eslintConfig": {
@@ -21,10 +22,16 @@
       "./node_modules/@s-ui/lint/eslintrc.js"
     ]
   },
-  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
   "stylelint": {
     "extends": "./node_modules/@s-ui/lint/stylelint.config.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:write",
+      "pre-push": "npm run test"
+    }
+  },
+  "prettier": "./node_modules/@s-ui/lint/.prettierrc.js",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -32,7 +39,6 @@
     ]
   },
   "jest": {
-    "rootDir": "src",
     "moduleNameMapper": {
       ".+\\.(css|styl|less|sass|scss)$": "jest-css-modules-transform"
     }
@@ -43,18 +49,19 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@s-ui/component-dependencies": "^1.5.0",
     "@s-ui/lint": "^3.14.0",
-    "@storybook/addon-actions": "^5.3.9",
-    "@storybook/addon-docs": "^5.3.8",
-    "@storybook/addon-knobs": "^5.3.8",
-    "@storybook/react": "^5.3.8",
+    "@storybook/addon-actions": "^5.3.10",
+    "@storybook/addon-docs": "^5.3.10",
+    "@storybook/addon-knobs": "^5.3.10",
+    "@storybook/react": "^5.3.10",
     "@testing-library/react": "^9.4.0",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "husky": "^4.2.1",
     "jest": "^25.1.0",
     "jest-css-modules-transform": "^4.0.0",
     "node-sass": "^4.13.1",
