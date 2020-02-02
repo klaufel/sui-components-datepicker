@@ -24,8 +24,11 @@ const Heading = ({type, size, children, ...props}) => {
 }
 
 Heading.propTypes = {
+  /** HTML tag to render */
   type: PropTypes.oneOf(Object.keys(HEADINGS_TYPES)),
+  /** Size of heading */
   size: PropTypes.oneOf(Object.keys(HEADINGS_SIZES)),
+  /** Content to be included in the heading */
   children: PropTypes.node.isRequired
 }
 
