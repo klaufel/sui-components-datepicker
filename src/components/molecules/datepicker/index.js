@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
-import Popover from '../../atoms/Popover'
-import FormField from '../FormField'
+import Popover from '../../atoms/popover'
+import FormField from '../formfield'
 import Calendar from '../calendar'
 
 const Datepicker = ({label, name}) => {
