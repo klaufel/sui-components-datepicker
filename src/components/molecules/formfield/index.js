@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Label from '../../atoms/label'
-import Input from '../../atoms/Input'
+import Input from '../../atoms/input'
 import './index.scss'
 
 const FormField = ({label, name, onClick, readonly, ...props}) => {

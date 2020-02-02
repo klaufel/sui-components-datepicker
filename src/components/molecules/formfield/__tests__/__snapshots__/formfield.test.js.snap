@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField renders the component 1`] = `
+<div
+  class="FormField"
+>
+  <label
+    class="Label"
+    for="input"
+  >
+    Default label
+  </label>
+  <input
+    class="Input"
+    id="input"
+    type="text"
+    value=""
+  />
+</div>
+`;
