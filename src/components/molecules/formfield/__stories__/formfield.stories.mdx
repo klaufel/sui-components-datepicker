@@ -1,14 +1,23 @@
 import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import {text, boolean} from '@storybook/addon-knobs'
 import FormField from '..'
+
+export const knobsProps = () => ({
+  label: text('label', 'Label'),
+  name: text('name', 'formfield'),
+  placeholder: text('placeholder', 'Placeholder'),
+  disabled: boolean('disabled', false),
+  readonly: boolean('readonly', false)
+})
 
 <Meta title="Molecules/FormField" component={FormField} />
 
 # FormField
 
-Let's define a story for our `FormField` component:
+The `FormField` component are the text fields that users fill in with different types of information.
 
 <Preview>
-  <Story name="default">
+  <Story name="Default">
     <FormField label="Label" name="formfield" />
   </Story>
 </Preview>
@@ -16,3 +25,50 @@ Let's define a story for our `FormField` component:
 ## Props
 
 <Props of={FormField} />
+
+## Stories
+
+### Placeholder
+
+<Preview>
+  <Story name="Placeholder">
+    <FormField label="Label" name="formfield" placeholder="Placeholder" />
+  </Story>
+</Preview>
+
+### Default value
+
+<Preview>
+  <Story name="Default value">
+    <FormField
+      label="Label"
+      name="formfield"
+      placeholder="Placeholder"
+      value="Default value"
+    />
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <FormField label="Label" name="formfield" value="Default value" disabled />
+  </Story>
+</Preview>
+
+### Readonly
+
+<Preview>
+  <Story name="Readonly">
+    <FormField label="Label" name="formfield" value="Default value" readonly />
+  </Story>
+</Preview>
+
+### Knobs
+
+<Preview>
+  <Story name="Knobs">
+    <FormField {...knobsProps()} />
+  </Story>
+</Preview>

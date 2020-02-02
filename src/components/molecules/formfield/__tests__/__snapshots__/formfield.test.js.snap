@@ -1,6 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormField renders the component 1`] = `
+exports[`FormField it works default 1`] = `
+<div
+  class="FormField"
+>
+  <label
+    class="Label"
+    for="FormField"
+  >
+    Default label
+  </label>
+  <input
+    class="Input"
+    id="FormField"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`FormField it works with default value 1`] = `
 <div
   class="FormField"
 >
@@ -13,8 +32,71 @@ exports[`FormField renders the component 1`] = `
   <input
     class="Input"
     id="input"
+    placeholder="Placeholder"
+    type="text"
+    value="Default value"
+  />
+</div>
+`;
+
+exports[`FormField it works with disabled attr 1`] = `
+<div
+  class="FormField"
+>
+  <label
+    class="Label"
+    for="input"
+  >
+    Default label
+  </label>
+  <input
+    class="Input"
+    disabled=""
+    id="input"
+    placeholder="Placeholder"
+    type="text"
+    value="Default value"
+  />
+</div>
+`;
+
+exports[`FormField it works with placeholder 1`] = `
+<div
+  class="FormField"
+>
+  <label
+    class="Label"
+    for="input"
+  >
+    Default label
+  </label>
+  <input
+    class="Input"
+    id="input"
+    placeholder="Placeholder"
     type="text"
     value=""
+  />
+</div>
+`;
+
+exports[`FormField it works with readonly attr 1`] = `
+<div
+  class="FormField"
+>
+  <label
+    class="Label"
+    for="input"
+  >
+    Default label
+  </label>
+  <input
+    class="Input"
+    id="input"
+    placeholder="Placeholder"
+    readonly=""
+    type="text"
+    value="Default value"
   />
 </div>
 `;

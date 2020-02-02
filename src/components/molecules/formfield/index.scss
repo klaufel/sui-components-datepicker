@@ -1,7 +1,7 @@
-.FormField {
-}
+@import '../../../styles/lib/index';
 
-.FormField-input {
-  border: 1px solid blue;
-  padding: 8px 16px;
+$FormField-marginBottom: $m-l !default;
+
+.FormField {
+  margin-bottom: $FormField-marginBottom;
 }
