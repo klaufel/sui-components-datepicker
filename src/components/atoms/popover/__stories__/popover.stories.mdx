@@ -9,10 +9,12 @@ import Calendar from '../../../molecules/calendar'
 Let's define a story for our `Popover` component:
 
 <Preview>
-  <Story name="default">
-    <Popover isActive>
-      <div>...children</div>
-    </Popover>
+  <Story name="Default">
+    <div style={{ height: '80px', marginBottom: '80px', marginTop: '-80px', position: 'relative' }}>
+      <Popover isOpen>
+        <span>...children</span>
+      </Popover>
+    </div>
   </Story>
 </Preview>
 
@@ -22,8 +24,12 @@ Let's define a story for our `Popover` component:
 
 ## Popover with Calendar
 
-<Story name="with calendar">
-  <Popover isActive>
-    <Calendar />
-  </Popover>
-</Story>
+<Preview>
+  <Story name="With calendar">
+    <div style={{ height: '380px', marginBottom: '380px', marginTop: '-380px', position: 'relative' }}>
+      <Popover isOpen>
+        <Calendar />
+      </Popover>
+    </div>
+  </Story>
+</Preview>

@@ -40,8 +40,11 @@ const Popover = ({children, onClose, isOpen}) => {
 }
 
 Popover.propTypes = {
+  /** Content to be included in the popover */
   children: PropTypes.node.isRequired,
+  /** Show the popover */
   isOpen: PropTypes.bool,
+  /** Callback function to manage prop from another component */
   onClose: PropTypes.func
 }
 
