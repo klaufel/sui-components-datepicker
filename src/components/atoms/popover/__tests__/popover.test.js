@@ -1,9 +1,9 @@
 import React from 'react'
 import {render} from '@testing-library/react'
-import Popover from '.'
+import Popover from '..'
 
 describe('Popover', () => {
-  it('renders the component', () => {
+  test('renders the component', () => {
     const {container} = render(
       <Popover>
         <div>...children</div>
