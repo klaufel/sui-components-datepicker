@@ -1,6 +1,6 @@
-@import '~@schibstedspain/sui-theme/lib/settings-compat-v7/index';
-@import '~@schibstedspain/sui-theme/lib/index';
+@import '../../../styles/lib/index';
 
+$Heading-color: $c-black !default;
 $Heading-sizes: (
   'sm': 'h3',
   'md': 'h2',
@@ -8,6 +8,8 @@ $Heading-sizes: (
 );
 
 .Heading {
+  color: $Heading-color;
+
   @each $size, $value in $Heading-sizes {
     &--#{$size} {
       @if $value == 'h3' {
