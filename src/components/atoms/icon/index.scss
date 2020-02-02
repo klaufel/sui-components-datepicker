@@ -1,12 +1,12 @@
-@import '~@schibstedspain/sui-theme/lib/index';
+@import '../../../styles/lib/index';
 
-$Icon-fill: #31417d !default;
+$Icon-fill: $c-primary !default;
 $Icon-sizes: (
   'sm': $sz-icon-s,
   'md': $sz-icon-m,
   'lg': $sz-icon-l,
   'xl': $sz-icon-xl
-) !default;
+);
 
 // Output CSS
 .Icon {
