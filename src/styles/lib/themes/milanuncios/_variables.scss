@@ -1,0 +1,30 @@
+$c-global: green !default;
+$c-light: #ffffff !default;
+$c-dark: #30302e !default;
+$c-gray: #eae5e0 !default;
+
+// Components
+
+// Atoms
+$font-family: 'Open Sans';
+
+//## Button
+$Button-color: $c-light;
+$Button-backgroundColor: $c-global;
+$Button-backgroundColor--hover: darken($Button-backgroundColor, 15%);
+$Button-backgroundColor--active: darken($Button-backgroundColor, 5%);
+$Button-borderRadius: $bdrs-button;
+
+//## Icon
+$Icon-fill: $c-global;
+
+//## Input
+$Input-background: $c-light;
+$Input-border: 1px solid $c-gray;
+$Input-fontSize: 16px;
+$Input-paddingX: 16px;
+$Input-borderRadius: 0;
+$Input-height: 40px;
+
+//## Heading
+$Heading-color: $c-dark;
