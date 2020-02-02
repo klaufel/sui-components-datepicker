@@ -1,3 +1,22 @@
+@import '../../../styles/index';
+
+$Input-background: $c-white !default;
+$Input-border: 1px solid $c-gray !default;
+$Input-fontSize: $fz-base !default;
+$Input-paddingX: $p-h !default;
+$Input-borderRadius: $bdrs-none !default;
+$Input-height: 40px !default;
+
 .Input {
-  margin-bottom: 20px;
+  display: block;
+  outline: none;
+  width: 100%;
+  background: $Input-background;
+  border: $Input-border;
+  font-family: inherit;
+  font-size: $Input-fontSize;
+  padding: 0 $Input-paddingX;
+  appearance: none;
+  border-radius: $Input-borderRadius;
+  height: $Input-height;
 }
