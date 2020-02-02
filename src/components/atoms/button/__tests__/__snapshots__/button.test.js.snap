@@ -2,7 +2,7 @@
 
 exports[`Button renders the component 1`] = `
 <button
-  class="Button Button--default"
+  class="Button"
 >
   Default button
 </button>
