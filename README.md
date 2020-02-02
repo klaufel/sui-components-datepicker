@@ -17,18 +17,15 @@
 </p>
 
 <p align="center">
-  <a href="#-overview">Overview</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-guidelines">Guidelines</a> •
-  <a href="#-theming">Theming</a> •
-  <a href="#-testing-the-application">Testing</a> •
-  <a href="#-how-to-use-in-a-project">Distribution</a> •
-  <a href="#-authors">Authors</a>
+  <a href="#overview">Overview</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#guidelines">Guidelines</a> •
+  <a href="#theming">Theming</a> •
+  <a href="#testing-the-application">Testing</a> •
+  <a href="#how-to-use-in-a-project">Distribution</a> •
+  <a href="#authors">Authors</a>
 </p>
-
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
 
 ## :fire: Overview
 
