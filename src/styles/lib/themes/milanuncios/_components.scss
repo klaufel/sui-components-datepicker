@@ -11,12 +11,12 @@
 //== Atoms
 
 //## Button
-//$Button-fontSize: $fz-l;
+$Button-fontSize: $fz-m;
 //$Button-color: $c-white;
 //$Button-backgroundColor: $c-primary;
 //$Button-backgroundColor--hover: darken($Button-backgroundColor, 10%);
 //$Button-backgroundColor--active: darken($Button-backgroundColor, 5%);
-//$Button-borderRadius: $bdrs-none;
+$Button-borderRadius: $bdrs-base;
 //$Button-PaddingY: $p-v;
 //$Button-PaddingX: $p-h;
 
@@ -30,12 +30,12 @@
 //$Input-border: true; // Define if use borders <boolean>
 //$Input-color: $c-black;
 //$Input-background: $c-white;
-//$Input-borderColor: $c-gray-light-2;
-//$Input-fontSize: 'l';
+$Input-borderColor: $c-primary;
+$Input-fontSize: 'm';
 //$Input-lineHeight: $lh-xl;
-//$Input-paddingY: $p-m;
-//$Input-paddingX: $p-h;
-//$Input-borderRadius: $bdrs-none;
+$Input-paddingY: $p-s;
+$Input-paddingX: $p-l;
+$Input-borderRadius: $bdrs-base;
 //$Input-placeholder-color: $c-gray-light-1;
 //$Input-onHover-borderColor: $c-black;
 //$Input-onFocus-borderColor: $c-black;
@@ -49,10 +49,10 @@
 
 //## Popopver
 //$Popover-background: $c-white;
-//$Popover-boxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+$Popover-boxShadow: 0;
 //$Popover-borderRadius: $bdrs-base;
 //$Popover-borderColor: $c-gray;
-//$Popover-border: false;
+$Popover-border: true;
 
 //== Molecules
 
@@ -64,7 +64,7 @@
 //$Calendar-day-onHover-backgroundColor: $c-gray-light-3;
 //$Calendar-day-isSelected-backgroundColor: $c-primary;
 //$Calendar-day-isSelected-color: $c-white;
-//$Calendar-shape: 'circle';
+$Calendar-shape: 'square';
 
 //## FormField
 //$FormField-marginBottom: $m-l;
