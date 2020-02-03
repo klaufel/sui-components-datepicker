@@ -17,13 +17,13 @@ $Popover-border: false !default;
   visibility: hidden;
   border-radius: $Popover-borderRadius;
   transition: opacity 0.2s, visibility 0.2s;
-  transition-delay: 0.25s;
+  transition-delay: 0.5s;
 
   @if $Popover-border == true {
     border: 1px solid $Popover-borderColor;
   }
 
-  @media (min-width: 768px) {
+  @include media-breakpoint-up('m') {
     padding: $p-xl;
   }
 
