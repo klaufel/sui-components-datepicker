@@ -4,6 +4,8 @@ import FormField from '../../components/molecules/formfield'
 import Datepicker from '../../components/molecules/datepicker'
 import Button from '../../components/atoms/button'
 
+export const handleSubmit = () => event.preventDefault()
+
 <Meta title="Design System/Intro" />
 
 # Welcome to Adevinta Design System
@@ -17,16 +19,16 @@ Adevinta Design System is an open-source, high-quality library of reusable React
 
 > This is a simple form to use datepicker in a context:
 
-<br/>
-
+<br />
 <Preview>
-    <form onSubmit={() => event.preventDefault()}>
-        <Heading>Form title</Heading>
-        <br/>
-        <Datepicker label="Date of birth" name="birth" />
-        <FormField label="Name" name="name" />
-        <FormField label="Lastname" name="lastname" />
-        <br/><br/>
-        <Button type="submit">Send form</Button>
-    </form>
+  <form onClick={handleSubmit}>
+    <Heading>Form title</Heading>
+    <br />
+    <Datepicker label="Date of birth" name="birth" />
+    <FormField label="Name" name="name" />
+    <FormField label="Lastname" name="lastname" />
+    <br />
+    <br />
+    <Button type="submit">Send form</Button>
+  </form>
 </Preview>
