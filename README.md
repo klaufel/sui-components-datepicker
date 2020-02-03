@@ -25,6 +25,8 @@
   <a href="#cookie-authors">Authors</a>
 </p>
 
+![adevinta-storybook](https://user-images.githubusercontent.com/1427623/73654378-d370b980-468b-11ea-81fc-e4071f5df25a.gif)
+
 ## :fire: Overview
 
 We use of the best tools to improve the workflow to allow you to create an awesome library of components!
