@@ -8,6 +8,8 @@ const Button = ({onClick, disabled, children, ...props}) => (
   </button>
 )
 
+Button.displayName = 'Button'
+
 Button.propTypes = {
   /** Content to be included in the button */
   children: PropTypes.node.isRequired,
