@@ -21,7 +21,7 @@
   <a href="#nail_care-guidelines">Guidelines</a> •
   <a href="#rainbow-theming">Theming</a> •
   <a href="#pray-testing-the-application">Testing</a> •
-  <a href="#mailbox-how-to-use-in-a-project">Distribution</a> •
+  <a href="#mailbox-how-to-use-in-a-project">Distribution</a>
 </p>
 
 <p align="center">
