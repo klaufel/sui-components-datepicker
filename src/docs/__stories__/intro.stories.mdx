@@ -15,33 +15,18 @@ Adevinta Design System is an open-source, high-quality library of reusable React
 
 ## Example of use a developed components:
 
-> This is a simple form to use a datepicker in a context...
+> This is a simple form to use datepicker in a context:
+
+<br/>
 
 <Preview>
-  <form>
-    <Heading>Default form</Heading>
-    <FormField label="Name" />
-    <Datepicker label="Date of birth" />
-    <br />
-    <br />
-    <Button type="submit">Submit</Button>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-  </form>
+    <form onSubmit={() => event.preventDefault()}>
+        <Heading>Form title</Heading>
+        <br/>
+        <Datepicker label="Date of birth" name="birth" />
+        <FormField label="Name" name="name" />
+        <FormField label="Lastname" name="lastname" />
+        <br/><br/>
+        <Button type="submit">Send form</Button>
+    </form>
 </Preview>
