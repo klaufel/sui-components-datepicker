@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/1427623/73654378-d370b980-468b-11ea-81fc-e4071f5df25a.gif"
+    <img src="https://user-images.githubusercontent.com/1427623/73655313-07e57500-468e-11ea-8534-b22b8d0cbda7.gif"
          alt="Adevinta Storybook">
 </p>
 
