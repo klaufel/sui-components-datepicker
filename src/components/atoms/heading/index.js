@@ -23,6 +23,8 @@ const Heading = ({type, size, children, ...props}) => {
   return React.createElement(type, {className: classname, ...props}, children)
 }
 
+Heading.displayName = 'Heading'
+
 Heading.propTypes = {
   /** HTML tag to render */
   type: PropTypes.oneOf(Object.keys(HEADINGS_TYPES)),
