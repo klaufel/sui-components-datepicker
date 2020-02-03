@@ -22,6 +22,7 @@ $Button-PaddingX: $p-h !default;
   padding: $Button-PaddingY $Button-PaddingX;
   background-color: $Button-backgroundColor;
   color: $Button-color;
+  transition: color 0.2s, background-color 0.2s;
 
   &:hover {
     background-color: $Button-backgroundColor--hover;

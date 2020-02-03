@@ -34,9 +34,9 @@ $Input-fontSizes: (
   border-radius: $Input-borderRadius;
   color: $Input-color;
   line-height: $Input-lineHeight;
-  transition: border-color 0.2s, color 0.2s;
   -webkit-appearance: none;
   @include fontSizeVariation($Input-fontSizes, $Input-fontSize);
+  transition: color 0.2s, border-color 0.2s;
 
   @if $Input-border == true {
     @include InputBorder(
