@@ -25,7 +25,10 @@
   <a href="#cookie-authors">Authors</a>
 </p>
 
-![adevinta-storybook](https://user-images.githubusercontent.com/1427623/73654378-d370b980-468b-11ea-81fc-e4071f5df25a.gif)
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/1427623/73654378-d370b980-468b-11ea-81fc-e4071f5df25a.gif"
+         alt="Adevinta Storybook">
+</p>
 
 ## :fire: Overview
 
