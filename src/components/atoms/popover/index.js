@@ -31,6 +31,7 @@ const Popover = ({children, onClose, isOpen, closeOutside}) => {
   if (isActive) {
     classname += ' is-active'
   }
+
   return (
     <div ref={wrapperRef} className={classname}>
       {children}
