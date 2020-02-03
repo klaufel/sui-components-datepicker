@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://adevinta-technical-test.netlify.com/?path=/docs/design-system-intro--page"><img src="https://www.adevinta.com/wp-content/themes/scom/assets/img/Adevinta-logo.svg" alt="Markdownify" width="200"></a>
+  <a href="https://sui-components-datepicker.netlify.com/?path=/docs/design-system-intro--page"><img src="https://www.adevinta.com/wp-content/themes/scom/assets/img/Adevinta-logo.svg" alt="Markdownify" width="200"></a>
   <br><br>
    Welcome to Adevinta Design System 👋
   <br>
@@ -8,7 +8,7 @@
 <h4 align="center">A awesome design system for your products and experiences!</h4>
 
 <p align="center">
-  <a href="https://app.netlify.com/sites/adevinta-technical-test/deploys">
+  <a href="https://app.netlify.com/sites/sui-components-datepicker/deploys">
     <img src="https://api.netlify.com/api/v1/badges/93a5287a-c770-4585-9958-702541893391/deploy-status"
          alt="Netlify Status">
   </a>
@@ -22,7 +22,6 @@
   <a href="#rainbow-theming">Theming</a> •
   <a href="#pray-testing-the-application">Testing</a> •
   <a href="#mailbox-how-to-use-in-a-project">Distribution</a> •
-  <a href="#cookie-authors">Authors</a>
 </p>
 
 <p align="center">
@@ -52,7 +51,7 @@ To get you started, you need to meet the prerequisites, and then follow the inst
 #### Installing
 
 You can clone our Git repository:
-`$ git clone git@github.com:klaufel/adevinta-technical-test.git`
+`$ git clone git@github.com:klaufel/sui-components-datepicker.git`
 
 #### Wiring up your development environment
 
@@ -207,11 +206,11 @@ To import a theme, it must currently be done manually `(see TODO below)`. In the
 
 ##### Design systems deployed with themes
 
-- Default theme (SUI): [https://adevinta-technical-test-sui.netlify.com/](https://adevinta-technical-test-sui.netlify.com/)
+- Default theme (SUI): [https://sui-components-datepicker-sui.netlify.com/](https://sui-components-datepicker-sui.netlify.com/)
 
-- Adevinta theme: [https://adevinta-technical-test.netlify.com/](https://adevinta-technical-test.netlify.com/)
+- Adevinta theme: [https://sui-components-datepicker.netlify.com/](https://sui-components-datepicker.netlify.com/)
 
-- Milanuncios theme: [https://adevinta-technical-test-milanuncios.netlify.com/](https://adevinta-technical-test-milanuncios.netlify.com/)
+- Milanuncios theme: [https://sui-components-datepicker-milanuncios.netlify.com/](https://sui-components-datepicker-milanuncios.netlify.com/)
 
 
 `TODO: Make selector for dynamic theme change through Storybook using SASS theme. Currently, it is necessary to modify the import of the current theme.
@@ -244,9 +243,3 @@ There is a hook to pre-push with [Husky](https://github.com/typicode/husky), wil
 ## :mailbox: How to use in a project
 
 `TODO: Package the library so it can be used by other applications with the theme config`
-
-## :cookie: Authors
-
-**Adevinta Team**
-
-Website: https://adevinta-technical-test.netlify.com/
