@@ -6,6 +6,7 @@ $Input-color: $c-black !default;
 $Input-background: $c-white !default;
 $Input-borderColor: $c-gray-light-2 !default;
 $Input-fontSize: 'l' !default;
+$Input-lineHeight: $lh-xl !default;
 $Input-paddingY: $p-m !default;
 $Input-paddingX: $p-h !default;
 $Input-borderRadius: $bdrs-none !default;
@@ -32,8 +33,9 @@ $Input-fontSizes: (
   padding: $Input-paddingY $Input-paddingX;
   border-radius: $Input-borderRadius;
   color: $Input-color;
-  line-height: 1;
+  line-height: $Input-lineHeight;
   transition: border-color 0.2s, color 0.2s;
+  -webkit-appearance: none;
   @include fontSizeVariation($Input-fontSizes, $Input-fontSize);
 
   @if $Input-border == true {
@@ -50,7 +52,6 @@ $Input-fontSizes: (
   &:hover,
   &:focus,
   &:active {
-    appearance: none;
     box-shadow: none;
     outline: none;
   }

@@ -7,6 +7,7 @@ const Input = ({
   name,
   placeholder,
   value,
+  defaultValue,
   disabled,
   readonly,
   onClick,
@@ -17,7 +18,8 @@ const Input = ({
       id={id}
       name={name}
       placeholder={placeholder}
-      defaultValue={value}
+      value={value}
+      defaultValue={defaultValue}
       disabled={disabled}
       readOnly={readonly}
       onClick={onClick}
@@ -27,6 +29,8 @@ const Input = ({
   )
 }
 
+Input.displayName = 'Input'
+
 Input.propTypes = {
   /** The DOM id global attribute */
   id: PropTypes.string,
@@ -34,8 +38,10 @@ Input.propTypes = {
   name: PropTypes.string,
   /** A hint to the user of what can be entered in the control. The placeholder text must not contain carriage returns or line-feeds */
   placeholder: PropTypes.string,
-  /** Default value of input */
+  /** Value of input */
   value: PropTypes.string,
+  /** Default value of input */
+  defaultValue: PropTypes.string,
   /** This Boolean attribute prevents the user from interacting with the input */
   disabled: PropTypes.bool,
   /** This Boolean attribute prevents the user modify the value of input */

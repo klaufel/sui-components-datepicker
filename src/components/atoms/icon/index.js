@@ -29,6 +29,8 @@ const Icon = ({name, size}) => (
   </svg>
 )
 
+Icon.displayName = 'Icon'
+
 Icon.propTypes = {
   /** Name of icon, use of a list of names */
   name: PropTypes.oneOf(ICON_NAMES).isRequired,

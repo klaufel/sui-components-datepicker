@@ -20,21 +20,21 @@ describe('Input', () => {
 
   test('it works with default value', () => {
     const {container} = render(
-      <Input placeholder="Placeholder" value="Default value" />
+      <Input placeholder="Placeholder" defaultValue="Default value" />
     )
     expect(container.firstChild).toMatchSnapshot()
   })
 
   test('it works with disabled attr', () => {
     const {container} = render(
-      <Input placeholder="Placeholder" value="Default value" disabled />
+      <Input placeholder="Placeholder" defaultValue="Default value" disabled />
     )
     expect(container.firstChild).toMatchSnapshot()
   })
 
   test('it works with readonly attr', () => {
     const {container} = render(
-      <Input placeholder="Placeholder" value="Default value" readonly />
+      <Input placeholder="Placeholder" defaultValue="Default value" readonly />
     )
     expect(container.firstChild).toMatchSnapshot()
   })

@@ -1,6 +1,12 @@
 import {Meta, Props, Story, Preview} from '@storybook/addon-docs/blocks'
+import {boolean} from '@storybook/addon-knobs'
 import Popover from '..'
 import Calendar from '../../../molecules/calendar'
+
+export const knobsProps = () => ({
+  isOpen: boolean('isOpen', true),
+  closeOutside: boolean('closeOutside', false)
+})
 
 <Meta title="Atoms/Popover" component={Popover} />
 
@@ -28,6 +34,30 @@ Let's define a story for our `Popover` component:
   <Story name="With calendar">
     <div style={{ height: '380px', marginBottom: '380px', marginTop: '-380px', position: 'relative' }}>
       <Popover isOpen>
+        <Calendar />
+      </Popover>
+    </div>
+  </Story>
+</Preview>
+
+## Popover with Calendar and close on click outside
+
+<Preview>
+  <Story name="With calendar and close on click outside">
+    <div style={{ height: '380px', marginBottom: '380px', marginTop: '-380px', position: 'relative' }}>
+      <Popover isOpen closeOutside>
+        <Calendar />
+      </Popover>
+    </div>
+  </Story>
+</Preview>
+
+## Knobs
+
+<Preview>
+  <Story name="Knobs">
+    <div style={{ height: '380px', marginBottom: '380px', marginTop: '-380px', position: 'relative' }}>
+      <Popover {...knobsProps()}>
         <Calendar />
       </Popover>
     </div>

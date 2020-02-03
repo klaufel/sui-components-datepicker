@@ -8,6 +8,8 @@ const Label = ({text, name}) => (
   </label>
 )
 
+Label.displayName = 'Label'
+
 Label.propTypes = {
   /** The label itself */
   text: PropTypes.string.isRequired,
