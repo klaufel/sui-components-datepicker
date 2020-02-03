@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 import Icon from '../../atoms/icon'
@@ -19,12 +19,12 @@ const Calendar = ({date, month, year, onDateChange}) => {
     year: year || dateCurrent.year,
     month: month || dateCurrent.month
   })
+  const calendarDays = getCalendarDays(dateCalendar.year, dateCalendar.month)
   const [dateSelected, setDateSelected] = useState(
     date
       ? getDateFormat(dateCurrent.year, dateCurrent.month, dateCurrent.day)
       : null
   )
-  const calendarDays = getCalendarDays(dateCalendar.year, dateCalendar.month)
 
   const handleNextMonth = () => {
     setDateCalendar(getNextMonth(dateCalendar.year, dateCalendar.month))
@@ -87,6 +87,8 @@ const Calendar = ({date, month, year, onDateChange}) => {
     </div>
   )
 }
+
+Calendar.displayName = 'Calendar'
 
 Calendar.propTypes = {
   /** Default date, format: dd/mm/yyyy  */

@@ -19,10 +19,20 @@ Use this `Datepicker` to select a specific date on a form.
 
 ## Stories
 
+### With placeholder
+
+<Story name="With placeholder">
+  <Datepicker
+    label="Select a date"
+    name="datepicker2"
+    placeholder="dd/mm/yyyy"
+  />
+</Story>
+
 ### Selected month and year
 
 <Story name="Default month and year">
-  <Datepicker label="Select a date" name="datepicker2" month={3} year={1955} />
+  <Datepicker label="Select a date" name="datepicker3" month={3} year={1955} />
 </Story>
 
 ###### Values in the story
@@ -33,7 +43,7 @@ Use this `Datepicker` to select a specific date on a form.
 ### Selected date
 
 <Story name="Selected date">
-  <Datepicker label="Select a date" name="datepicker3" date="01/10/1994" />
+  <Datepicker label="Select a date" name="datepicker4" date="01/10/1994" />
 </Story>
 
 ###### Values in the story
@@ -45,7 +55,7 @@ Use this `Datepicker` to select a specific date on a form.
 <Story name="Selected date with a month and year">
   <Datepicker
     label="Select a date"
-    name="datepicker4"
+    name="datepicker5"
     date="31/01/2020"
     month={2}
     year={2020}
@@ -57,3 +67,21 @@ Use this `Datepicker` to select a specific date on a form.
 ⋅ Date selected: **31/01/2020** _(January)_
 ⋅ Month: **February (2)**
 ⋅ Year: **2020**
+
+### Selected date and disabled attr
+
+<Story name="Disabled">
+  <Datepicker
+    label="Select a date"
+    name="datepicker6"
+    date="31/01/2020"
+    disabled
+  />
+</Story>
+
+###### Values in the story
+
+⋅ Date selected: **31/01/2020** _(January)_
+⋅ Month: **February (2)**
+⋅ Year: **2020**
+⋅ Disabled

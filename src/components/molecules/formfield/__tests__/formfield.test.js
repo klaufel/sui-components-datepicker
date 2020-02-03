@@ -23,7 +23,7 @@ describe('FormField', () => {
         label="Default label"
         name="input"
         placeholder="Placeholder"
-        value="Default value"
+        defaultValue="Default value"
       />
     )
     expect(container.firstChild).toMatchSnapshot()
@@ -35,7 +35,7 @@ describe('FormField', () => {
         label="Default label"
         name="input"
         placeholder="Placeholder"
-        value="Default value"
+        defaultValue="Default value"
         disabled
       />
     )
